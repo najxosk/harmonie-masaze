@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masáže Harmónia | Profesionálne masáže</title>
+  <meta name="description" content="Profesionálne masáže pre uvoľnenie tela aj mysle. Rezervujte si termín online alebo zavolajte." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f6f1ea;
+      --bg-soft: #efe6da;
+      --ink: #2c2620;
+      --muted: #6b6158;
+      --accent: #6b7f63;
+      --accent-dark: #4f5e4a;
+      --gold: #c4a574;
+      --white: #fffdf9;
+      --shadow: 0 20px 50px rgba(44, 38, 32, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Source Sans 3", sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    header { position: sticky; top: 0; z-index: 50; background: rgba(246, 241, 234, 0.86); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(44,38,32,0.06); }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+    .logo { font-family: "Cormorant Garamond", serif; font-size: 28px; letter-spacing: 0.04em; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 28px; font-weight: 500; color: var(--muted); }
+    .nav-links a:hover { color: var(--ink); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; background: var(--accent); color: white; border: 0; padding: 13px 22px; border-radius: 999px; font-weight: 600; cursor: pointer; transition: 0.2s ease; }
+    .btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .btn.ghost { background: transparent; color: var(--ink); border: 1px solid rgba(44,38,32,0.18); }
+    .hero { padding: 72px 0 40px; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; }
+    .eyebrow { letter-spacing: 0.18em; text-transform: uppercase; font-size: 12px; color: var(--accent-dark); font-weight: 600; }
+    h1, h2, h3 { font-family: "Cormorant Garamond", serif; line-height: 1.15; }
+    h1 { font-size: clamp(42px, 6vw, 72px); margin: 14px 0 18px; }
+    .hero p { font-size: 18px; color: var(--muted); max-width: 520px; }
+    .hero-actions { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+    .hero-card { background: var(--white); border-radius: 28px; overflow: hidden; box-shadow: var(--shadow); }
+    .hero-card .photo { height: 360px; background: linear-gradient(180deg, rgba(44,38,32,0.05), rgba(44,38,32,0.28)), url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80") center/cover; }
+    .hero-meta { padding: 22px 24px; display: flex; justify-content: space-between; gap: 16px; }
+    .hero-meta strong { display: block; font-size: 15px; }
+    .hero-meta span { color: var(--muted); font-size: 14px; }
+    section { padding: 72px 0; }
+    .section-head { max-width: 620px; margin-bottom: 36px; }
+    h2 { font-size: clamp(34px, 4vw, 48px); margin: 8px 0 12px; }
+    .services, .firms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .firm-banner { margin-top: 24px; background: var(--accent-dark); color: white; border-radius: 22px; padding: 28px; display: flex; justify-content: space-between; gap: 20px; align-items: center; flex-wrap: wrap; }
+    .firm-banner p { color: rgba(255,255,255,0.82); max-width: 560px; }
+    .firm-banner .btn { background: white; color: var(--accent-dark); }
+    .hidden { display: none !important; }
+    .card { background: var(--white); border-radius: 22px; padding: 26px; box-shadow: var(--shadow); }
+    .card h3 { font-size: 28px; margin-bottom: 10px; }
+    .price { color: var(--accent-dark); font-weight: 600; margin-top: 16px; }
+    .about { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; align-items: center; }
+    .about-photo { height: 420px; border-radius: 28px; background: linear-gradient(180deg, transparent, rgba(44,38,32,0.25)), url("https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80") center/cover; }
+    .booking { background: var(--bg-soft); border-radius: 32px; padding: 40px; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 36px; }
+    form { display: grid; gap: 12px; }
+    label { font-size: 13px; font-weight: 600; color: var(--muted); }
+    input, select, textarea { width: 100%; border: 1px solid rgba(44,38,32,0.12); background: white; border-radius: 12px; padding: 12px 14px; font: inherit; color: var(--ink); }
+    textarea { min-height: 110px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .contact-box { background: var(--white); border-radius: 22px; padding: 28px; }
+    .contact-box a { color: var(--accent-dark); font-weight: 600; }
+    .phone { font-family: "Cormorant Garamond", serif; font-size: 36px; display: block; margin: 8px 0 18px; }
+    footer { padding: 28px 0 50px; color: var(--muted); font-size: 14px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .toast { position: fixed; bottom: 24px; right: 24px; background: var(--ink); color: white; padding: 14px 18px; border-radius: 14px; display: none; }
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .hero, .about, .booking, .services, .firms, .form-row { grid-template-columns: 1fr; }
+      .hero-card .photo, .about-photo { height: 280px; }
+      .booking { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="logo" href="#">Harmónia <span>Masáže</span></a>
+        <div class="nav-links">
+          <a href="#sluzby">Služby</a>
+          <a href="#firmy">Pre firmy</a>
+          <a href="#o-mne">O mne</a>
+          <a href="#rezervacia">Rezervácia</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+        <a class="btn" href="#rezervacia">Objednať termín</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Profesionálny masér</p>
+        <h1>Uvoľnite telo.<br>Skľudnite myseľ.</h1>
+        <p>Individuálne masáže pre športovcov, kancelársku prácu aj úplný oddych. Rezervujte si termín online alebo zavolajte priamo.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#rezervacia">Rezervovať masáž</a>
+          <a class="btn ghost" href="#firmy">Objednať pre firmu</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="photo"></div>
+        <div class="hero-meta">
+          <div><strong>Peter Novák</strong><span>Certifikovaný masér</span></div>
+          <div><strong>Bratislava</strong><span>Po–So · 9:00–20:00</span></div>
+        </div>
+      </div>
+    </section>
+    <section id="sluzby">
+      <div class="section-head">
+        <p class="eyebrow">Služby</p>
+        <h2>Masáže podľa toho, čo telo potrebuje</h2>
+        <p>Ceny a dĺžky sú orientačné — pri rezervácii ich môžete upraviť.</p>
+      </div>
+      <div class="services">
+        <article class="card"><h3>Klasická masáž</h3><p>Uvoľnenie svalov, zlepšenie prekrvenia a regenerácia po dlhom dni.</p><p class="price">60 min · 35 €</p></article>
+        <article class="card"><h3>Športová masáž</h3><p>Hlbšia práca so svalmi pred výkonom aj po tréningu.</p><p class="price">60 min · 40 €</p></article>
+        <article class="card"><h3>Relaxačná masáž</h3><p>Jemná, pomalá masáž na stíšenie nervovej sústavy a lepší spánok.</p><p class="price">75 min · 45 €</p></article>
+      </div>
+    </section>
+    <section id="firmy">
+      <div class="section-head">
+        <p class="eyebrow">Pre firmy</p>
+        <h2>Masáže pre tímy a kancelárie</h2>
+        <p>Výjazd do firmy, wellness dni, poukážky pre zamestnancov alebo pravidelný firemný termín.</p>
+      </div>
+      <div class="firms">
+        <article class="card"><h3>Výjazd do firmy</h3><p>Prídem s lehátkom priamo do kancelárie. Ideálne na 20–30 minútové masáže počas dňa.</p><p class="price">od 25 € / osoba</p></article>
+        <article class="card"><h3>Firemný deň</h3><p>Blok 3–8 hodín pre tím. Zamestnanci sa striedajú, vy riešite len priestor a zoznam ľudí.</p><p class="price">cena dohodou</p></article>
+        <article class="card"><h3>Poukážky pre tím</h3><p>Darčekové poukážky na masáž v štúdiu. Faktúra pre firmu, jednoduché uplatnenie.</p><p class="price">od 35 €</p></article>
+      </div>
+      <div class="firm-banner">
+        <div>
+          <h3 style="font-size:32px;margin-bottom:8px;">Chcete termín pre firmu?</h3>
+          <p>Vyplňte formulár ako firemná objednávka. Ozvem sa s voľnými termínmi a ponukou na faktúru.</p>
+        </div>
+        <a class="btn" href="#rezervacia" id="firma-cta">Objednať pre firmu</a>
+      </div>
+    </section>
+    <section id="o-mne" class="about">
+      <div class="about-photo"></div>
+      <div>
+        <p class="eyebrow">O masérovi</p>
+        <h2>Pokojné ruky, jasný prístup</h2>
+        <p>Pracujem s klientmi, ktorí chcú od bolesti, napätia v krížoch a krku alebo jednoducho hodinu ticha. Každú masáž prispôsobím — nie podľa cenníka, ale podľa toho, ako telo reaguje.</p>
+        <p style="margin-top:14px;color:var(--muted)">Certifikáty: klasická masáž, športová masáž, mäkké techniky. Štúdio v Bratislave, možnosť aj výjazdu po dohode.</p>
+      </div>
+    </section>
+    <section id="rezervacia">
+      <div class="booking">
+        <div id="kontakt">
+          <p class="eyebrow">Kontakt</p>
+          <h2>Napíšte alebo zavolajte</h2>
+          <div class="contact-box">
+            <span>Telefón</span>
+            <a class="phone" href="tel:+421900123456">+421 900 123 456</a>
+            <p>WhatsApp aj SMS sú v poriadku.</p>
+            <p style="margin-top:14px"><strong>Adresa:</strong><br>Hviezdoslavovo námestie 1<br>811 02 Bratislava</p>
+            <p style="margin-top:14px"><strong>E-mail:</strong><br><a href="mailto:peter@harmonie-masaze.sk">peter@harmonie-masaze.sk</a></p>
+          </div>
+        </div>
+        <form id="form">
+          <div class="form-row">
+            <div>
+              <label for="type">Typ objednávky</label>
+              <select id="type" name="type">
+                <option value="osoba">Súkromná rezervácia</option>
+                <option value="firma">Firemná objednávka</option>
+              </select>
+            </div>
+            <div>
+              <label for="service">Služba</label>
+              <select id="service" name="service">
+                <option>Klasická masáž</option>
+                <option>Športová masáž</option>
+                <option>Relaxačná masáž</option>
+                <option>Výjazd do firmy</option>
+                <option>Firemný deň / blok termínov</option>
+                <option>Poukážky pre zamestnancov</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row hidden" id="company-fields">
+            <div>
+              <label for="company">Názov firmy</label>
+              <input id="company" name="company" placeholder="s.r.o. / a.s." />
+            </div>
+            <div>
+              <label for="people">Počet osôb</label>
+              <input id="people" name="people" type="number" min="1" placeholder="napr. 8" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div>
+              <label for="name">Meno kontaktnej osoby</label>
+              <input id="name" name="name" required placeholder="Vaše meno" />
+            </div>
+            <div>
+              <label for="phone">Telefón</label>
+              <input id="phone" name="phone" required placeholder="+421 ..." />
+            </div>
+          </div>
+          <div class="form-row">
+            <div>
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" placeholder="pre potvrdenie" />
+            </div>
+            <div>
+              <label for="date">Preferovaný termín</label>
+              <input id="date" name="date" type="datetime-local" required />
+            </div>
+          </div>
+          <div>
+            <label for="note">Poznámka</label>
+            <textarea id="note" name="note" placeholder="Bolesti, adresa firmy, fakturačné údaje..."></textarea>
+          </div>
+          <button class="btn" type="submit">Odoslať rezerváciu</button>
+          <p style="font-size:13px;color:var(--muted)">Formulár otvorí e-mail. Termín potvrdím telefonicky. Pre firmy viem vystaviť faktúru.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <div class="wrap">
+    <footer>
+      <span>© 2026 Harmónia Masáže · Peter Novák</span>
+      <span>Upravte meno, telefón a adresu pred zverejnením.</span>
+    </footer>
+  </div>
+  <div class="toast" id="toast">Rezervácia je pripravená v e-maile.</div>
+  <script>
+    const form = document.getElementById("form");
+    const toast = document.getElementById("toast");
+    const type = document.getElementById("type");
+    const companyFields = document.getElementById("company-fields");
+    const firmaCta = document.getElementById("firma-cta");
+    function toggleCompany() {
+      const isFirma = type.value === "firma";
+      companyFields.classList.toggle("hidden", !isFirma);
+    }
+    type.addEventListener("change", toggleCompany);
+    firmaCta.addEventListener("click", () => {
+      type.value = "firma";
+      toggleCompany();
+    });
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      const isFirma = data.type === "firma";
+      const subject = encodeURIComponent((isFirma ? "Firemná objednávka masáže – " : "Rezervácia masáže – ") + data.name);
+      const body = encodeURIComponent(
+        "Typ: " + (isFirma ? "firma" : "súkromná") + "\n" +
+        "Meno: " + data.name + "\n" +
+        "Telefón: " + data.phone + "\n" +
+        "E-mail: " + (data.email || "-") + "\n" +
+        "Firma: " + (data.company || "-") + "\n" +
+        "Počet osôb: " + (data.people || "-") + "\n" +
+        "Služba: " + data.service + "\n" +
+        "Termín: " + data.date + "\n" +
+        "Poznámka: " + (data.note || "-")
+      );
+      window.location.href = "mailto:peter@harmonie-masaze.sk?subject=" + subject + "&body=" + body;
+      toast.style.display = "block";
+      setTimeout(() => toast.style.display = "none", 3500);
+    });
+  </script>
+</body>
+</html>
